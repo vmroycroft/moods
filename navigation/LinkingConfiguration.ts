@@ -12,14 +12,14 @@ export default {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          Today: {
             screens: {
-              TabOneScreen: 'one',
+              New: 'today',
             },
           },
-          TabTwo: {
+          Calendar: {
             screens: {
-              TabTwoScreen: 'two',
+              View: 'calendar',
             },
           },
         },

@@ -1,0 +1,11 @@
+{
+	"prettier.singleQuote": true,
+	"prettier.printWidth": 120,
+	"prettier.useTabs": true,
+	"files.autoSave": "onFocusChange",
+	"editor.wordWrap": "on",
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode"
+}

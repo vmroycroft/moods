@@ -1,32 +1,35 @@
-import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, FlatList, Image, SafeAreaView, StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 export default function TabTwoScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
-    </View>
-  );
+	const [isLoading, setLoading] = useState(true);
+	const [data, setData] = useState([]);
+
+	function renderMood({ item }) {
+		return <Image key={item._id} source={require(`./${item.name}.png`)} style={{ width: 50, height: 50 }} />;
+	}
+
+	useEffect(() => {
+		fetch('http://localhost:5000/moods')
+			.then((response) => response.json())
+			.then((json) => setData(json))
+			.catch((error) => console.error(error))
+			.finally(() => setLoading(false));
+	}, []);
+
+	if (isLoading) return <ActivityIndicator />;
+
+	return (
+		<SafeAreaView style={styles.container}>
+			<FlatList numColumns={7} data={data} renderItem={renderMood} keyExtractor={(item: any) => item._id} />
+		</SafeAreaView>
+	);
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+	container: {
+		flex: 1
+	}
 });
