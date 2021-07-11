@@ -13,10 +13,14 @@ function MoodSelector() {
 		try {
 			await mutate('/api/moods', async () => {
 				await axios.post('/api/moods', { name: mood });
-				toast.success(`Saved mood: ${mood}`);
+				toast.success(
+					<span>
+						<span className="font-bold">Saved mood</span> {mood}
+					</span>
+				);
 			});
 		} catch (error) {
-			toast.error(error.response.data);
+			toast.error(<span>{error.response.data}</span>);
 		}
 	}
 
