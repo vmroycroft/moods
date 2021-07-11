@@ -46,6 +46,7 @@ function MoodCalendar() {
 						monthBorderColor="#ffffff"
 						dayBorderWidth={2}
 						dayBorderColor="#ffffff"
+						theme={{ textColor: '#6b6b6b' }}
 						tooltip={() => null}
 						legends={[
 							{
