@@ -21,8 +21,8 @@ function MoodSelector() {
 	}
 
 	return (
-		<div className="flex flex-col justify-center items-center h-screen">
-			<Button image={great} alt="Great" className="m-4" onClick={() => handleMoodClick('Great')} />
+		<div className="flex flex-col justify-start items-center h-screen">
+			<Button image={great} alt="Great" className="m-4 mt-0" onClick={() => handleMoodClick('Great')} />
 			<Button image={meh} alt="Meh" className="m-4" onClick={() => handleMoodClick('Meh')} />
 			<Button image={notGood} alt="Not Good" className="m-4" onClick={() => handleMoodClick('Not Good')} />
 		</div>
