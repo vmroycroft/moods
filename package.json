@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build && npm run migrate:up",
+		"build": "next build",
 		"start": "next start",
 		"migrate:up": "npx migrate-mongo up",
 		"migrate:down": "npx migrate-mongo down"
