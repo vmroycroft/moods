@@ -24,7 +24,22 @@
 	@apply rounded-3xl;
 }
 
-@media (prefers-color-scheme: dark) {
+.dark .button {
+	background: linear-gradient(145deg, #444444, #3a3a3a);
+	box-shadow: 5px 5px 10px #3b3b3b, -5px -5px 10px #454545;
+}
+
+.dark .button:active {
+	background: linear-gradient(145deg, #333131, #444444);
+	box-shadow: 5px 5px 10px #3b3b3b, -5px -5px 10px #454545;
+}
+
+.dark .card {
+	background: #404040; /* True Gray 700 */
+	box-shadow: 5px 5px 10px #3b3b3b, -5px -5px 10px #454545;
+}
+
+/* @media (prefers-color-scheme: dark) {
 	.button {
 		background: linear-gradient(145deg, #444444, #3a3a3a);
 		box-shadow: 5px 5px 10px #3b3b3b, -5px -5px 10px #454545;
@@ -36,7 +51,7 @@
 	}
 
 	.card {
-		background: #404040; /* True Gray 700 */
+		background: #404040; /* True Gray 700 
 		box-shadow: 5px 5px 10px #3b3b3b, -5px -5px 10px #454545;
 	}
-}
+} */

@@ -1,16 +1,39 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import Switch from 'react-switch';
 
 import MoodSelector from './MoodSelector';
 import MoodCalendar from './MoodCalendar';
 
 export default function Home() {
-	const [checked, setChecked] = useState(false);
+	const [checked, setChecked] = useState(true);
+
+	// set the theme (light/dark)
+	useEffect(() => {
+		if (isDarkMode()) {
+			document.querySelector('html').classList.add('dark');
+		} else {
+			document.querySelector('html').classList.remove('dark');
+			setChecked(false);
+		}
+	}, []);
 
 	function handleChange(nextChecked) {
 		setChecked(nextChecked);
+		if (nextChecked) {
+			document.querySelector('html').classList.add('dark');
+			localStorage.theme = 'dark';
+		} else {
+			document.querySelector('html').classList.remove('dark');
+			localStorage.theme = 'light';
+		}
+	}
+
+	function isDarkMode() {
+		return (
+			localStorage.theme === 'dark' ||
+			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+		);
 	}
 
 	return (

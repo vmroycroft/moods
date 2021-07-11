@@ -1,7 +1,9 @@
 {
-	"version": "0.1",
-	"language": "en",
-	"words": [],
-	"flagWords": [],
-	"ignoreWords": []
+    "version": "0.1",
+    "language": "en",
+    "words": [
+        "toastify"
+    ],
+    "flagWords": [],
+    "ignoreWords": []
 }
