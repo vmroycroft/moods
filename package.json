@@ -4,17 +4,27 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
-		"start": "next start"
-	},
-	"dependencies": {
-		"next": "11.0.1",
-		"react": "17.0.2",
-		"react-dom": "17.0.2"
+		"build": "next build && npm run migrate:up",
+		"start": "next start",
+		"migrate:up": "npx migrate-mongo up",
+		"migrate:down": "npx migrate-mongo down"
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.2.6",
 		"postcss": "^8.3.5",
 		"tailwindcss": "^2.2.4"
+	},
+	"dependencies": {
+		"@nivo/calendar": "^0.72.0",
+		"@nivo/core": "^0.72.0",
+		"axios": "^0.21.1",
+		"date-fns": "^2.22.1",
+		"mongodb": "^3.6.10",
+		"mongoose": "^5.13.2",
+		"next": "^11.0.1",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-toastify": "^7.0.4",
+		"swr": "^0.5.6"
 	}
 }
