@@ -3,42 +3,40 @@
 @tailwind utilities;
 
 .button {
-	cursor: pointer;
-}
-
-.neumorphic.button:active img {
-	transform: scale(0.98);
-}
-
-.neumorphic.button {
-	border-radius: 50%;
 	width: 250px;
 	height: 250px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.neumorphic.card {
-	border-radius: 50px;
-}
-
-.neumorphic {
-	background: #e5e5e5; /* True Gray 200 */
+	background: linear-gradient(145deg, #f5f5f5, #cecece);
 	box-shadow: 5px 5px 10px #d3d3d3, -5px -5px 10px #f7f7f7;
+	@apply flex items-center justify-center cursor-pointer rounded-full;
 }
 
-.neumorphic.button:active {
+.button:active {
 	box-shadow: inset 5px 5px 10px #d3d3d3, inset -5px -5px 10px #f7f7f7;
 }
 
+.button:active img {
+	transform: scale(0.98);
+}
+
+.card {
+	background: #e5e5e5; /* True Gray 200 */
+	box-shadow: 5px 5px 10px #d3d3d3, -5px -5px 10px #f7f7f7;
+	@apply rounded-3xl;
+}
+
 @media (prefers-color-scheme: dark) {
-	.neumorphic {
-		background: #404040; /* True Gray 700 */
+	.button {
+		background: linear-gradient(145deg, #444444, #3a3a3a);
 		box-shadow: 5px 5px 10px #3b3b3b, -5px -5px 10px #454545;
 	}
 
-	.neumorphic.button:active {
-		box-shadow: inset 5px 5px 10px #3b3b3b, inset -5px -5px 10px #454545;
+	.button:active {
+		background: linear-gradient(145deg, #333131, #444444);
+		box-shadow: 5px 5px 10px #3b3b3b, -5px -5px 10px #454545;
+	}
+
+	.card {
+		background: #404040; /* True Gray 700 */
+		box-shadow: 5px 5px 10px #3b3b3b, -5px -5px 10px #454545;
 	}
 }

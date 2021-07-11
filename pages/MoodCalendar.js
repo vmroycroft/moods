@@ -44,7 +44,7 @@ function MoodCalendar() {
 	return (
 		<div className="h-screen">
 			<div className="h-full py-5 md:py-10">
-				<div className="neumorphic card h-full w-2/3 md:w-1/2 mx-auto">
+				<div className="card h-full w-2/3 md:w-1/2 mx-auto">
 					<ResponsiveCalendar
 						data={data}
 						direction="vertical"
